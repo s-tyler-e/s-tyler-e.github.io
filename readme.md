@@ -1,1 +1,1 @@
-# s-tyler-e.github.io new update!
+# stylereich.github.io new update!
