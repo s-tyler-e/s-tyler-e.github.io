@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(107, 107, 107);
+}
+#hero-img {
+    width: 100%
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 125px;
+    padding: 100px;
+    border-width: 50px;
+    border-color: black;
+}
+#desk-img, #graphic-img, #person-img {
+    border-radius: 50%;
+    width: 100%;
+}

@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(253, 152, 203);
+}
+h1 {
+    color: white;
+    text-align: center;
+    font-family: "Arimo", sans-serif;
+}
+h2 {
+    color: white;
+    text-align: center;
+    margin: 40px 525px;
+    padding: 15px;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 200;
+    font-stretch: expanded;
+}
+h3 {
+    color: black;
+    margin-left: 450px;
+    font-family: "Arimo", sans-serif;
+
+}
+h4 {
+    color: white;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+h5 {
+    color: black;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+p {
+    color:white;
+    text-align: center;
+    font-family: "Merriweather", serif;
+    margin: 40px 450px;
+    font-size: small;
+}
+#pic {
+    width: 200px;
+    margin-left: 575px;
+}
