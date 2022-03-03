@@ -2,6 +2,10 @@
     max-width: 1600px;
     margin: 0 auto;
 }
+.rivers-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
 .home-grid{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
