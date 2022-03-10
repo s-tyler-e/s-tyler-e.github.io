@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready, Set, Go! | Form</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+    <div id="content">
+        <header>
+            <a id="logo_link" href="index.html">
+                <img class="logo" alt="RSG Logo" src="images/activities.jpg">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="form.html">Form</a>
+                <a href="faq.html">FAQ</a>
+                <a href="site-plan.html">Site Plan</a>
+            </nav>
+        </header>
+        <main class="form-grid">
+            <section id="form-title">
+                <h1>Select from the items below</h1>
+            </section>
+            <section id="age">
+                <h2>How old are you?</h2>
+                <label for="ages">Select your Age</label>
+                <select name="ages" id="ages">
+                    <option value="0-11">0-11</option>
+                    <option value="12-17">12-17</option>
+                    <option value="18+">18+</option>
+                </select>
+            </section>
+            <section id="where">
+                <h2>What is your current zip code?</h2>
+                <label for="location">Select your Zip Code</label>
+                <select name="location" id="location">
+                    <option value="83440">83440</option>
+                    <option value="83401">83401</option>
+                    <option value="83221">83221</option>
+                </select>
+               
+            </section>
+            <section id="when">
+                <h2>When's the party!?</h2>
+                <p>Select your Days</p>
+                <div>
+                    <input type="checkbox" id="mon" name="mon">
+                    <label for="mon">Monday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tues" name="tues">
+                    <label for="tues">Tuesday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="wed" name="wed">
+                    <label for="wed">Wednesday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="thurs" name="thurs">
+                    <label for="thurs">Thursday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="fri" name="fri">
+                    <label for="fri">Friday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sat" name="sat">
+                    <label for="sat">Saturday</label>
+                </div>
+            </section>
+            <section id="find">
+                <h1>Ready? Set! GO!</h1>
+            </section> 
+            <input type="text" name="zip" id="zip"/>
+                <img id="imgHere" src=""/>
+            <script>
+            function getLocation(){
+                var select = document.getElementById("location");
+                var input = document.getElementById("zip");
+                select.onchange = function() {
+                    input.value = select.value;
+                    getImage();
+                }
+            }
+            function getImage(){
+                var img = document.getElementById("location");
+                var imgTag = document.getElementById("imgHere");
+                if (img.value=="83440"){
+                    imgTag.src = "images/offroad.jpg";
+                } else if (img.value=="83401") {
+                    imgTag.src = "images/river.jpg";
+                } else if (img.value=="83221") {
+                    imgTag.src = "images/hike.jpg";
+                }
+            }
+            window.onload = getLocation;
+            </script>
+            <section id="compass">
+                <img src="images/compass.jpg">
+            </section>
+            <section id="form-msg">
+                <p>This website is very simple:
+                    Fill out the form and go where the ‘wind’ takes you. 
+                    Of course, by “go where the ‘wind’ takes you”, I mean “do what the results of the survey tell you to do”. Easy!
+                    All you need is your age, a location, a time frame, a friend (or an acquaintance at the VERY least), your social security number, your credit card information, your mother’s maiden name, the name of your first pet—
+                    Woah, woah! I’m kidding! Relax!
+                    Your age, a general location, and a time frame will be just fine. The site will ask for a zip code and when you want to do whatever fate has in store for you to do. The age input is to prevent inappropriate activities to appear to those who are ineligible (that’s right, college kids. Leave the kiddy pool for the kiddies!). 
+                    In all seriousness, safety is the priority here. Fun is a close second. Very close.
+                    Once the needed info is provided, viola! The site results provide you with a list of the top ten activities in your area and directions to get to each. They are ranked according to distance, time availability, and popularity (determined by other review providers. Ready, Set, Go! Is not affiliated with those other sites. yuck). If one wishes, one can also filter the results by any of those factors in whatever order is desired.
+                    Sadly, this website is not developed to the point where you can magically make any activity ever thought of just come to existence wherever you are. Activities are potentially limited by location, and as mentioned before, eligibility. We also don’t recommend forcing your good buddy Joe into doing something he has a deadly fear of (chin up, Joe. There are plenty of other cool and fun things to do besides upside-down ice fishing).</p>
+            </section>
+        </main>
+        <footer>
+            <h3>Ready, Set, Go! &copy; 2022 - Tyler Eich</h3>
+            <h3><a href="site-plan.html">Site Plan</a></h3>
+            <div class="social">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="images/facebook.png" alt="fb icon">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="images/twitter.png" alt="twitter icon">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="images/instagram.png" alt="instagram icon">
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
