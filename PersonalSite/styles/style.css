@@ -43,6 +43,39 @@ body {
     margin: 0;
     padding: 0;
 }
+* {
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+}
+.mySlides {
+    display: none;
+}
+.cursor {
+    cursor: pointer;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: 0px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
 #hero {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
