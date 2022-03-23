@@ -67,28 +67,36 @@
                 </div>
             </div>
         </div>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+        }
         <main class="form-grid">
             <section id="form-title">
                 <h1>Select from the items below</h1>
-            </section>
-            <section id="age">
-                <h2>How old are you?</h2>
-                <label for="ages">Select your Age</label>
-                <select name="ages" id="ages">
-                    <option value="0-11">0-11</option>
-                    <option value="12-17">12-17</option>
-                    <option value="18+">18+</option>
-                </select>
-            </section>
-            <section id="where">
-                <h2>What is your current zip code?</h2>
-                <label for="location">Select your Zip Code</label>
-                <select name="location" id="location">
-                    <option value="83440">83440</option>
-                    <option value="83401">83401</option>
-                    <option value="83221">83221</option>
-                </select>
-               
             </section>
             <section id="when">
                 <h2>When's the party!?</h2>
@@ -118,45 +126,73 @@
                     <label for="sat">Saturday</label>
                 </div>
             </section>
+            <section id="age">
+                <h2>How old are you?</h2>
+                <label for="ages">Select your Age</label>
+                <select name="ages" id="ages">
+                    <option>...</option>
+                    <option value="0-11">0-11</option>
+                    <option value="12-17">12-17</option>
+                    <option value="18+">18+</option>
+                </select>
+            </section>
+            <section id="where">
+                <h2>What is your current zip code?</h2>
+                <label for="location">Select your Zip Code</label>
+                <select name="location" id="location">
+                    <option>...</option>
+                    <option value="83440">83440</option>
+                    <option value="83401">83401</option>
+                    <option value="83221">83221</option>
+                </select>
+            </section>
             <section id="find">
                 <h1>Ready? Set! GO!</h1>
-            </section> 
-            <input type="text" name="zip" id="zip"/>
-                <img id="imgHere" src=""/>
-            <script>
-            function getLocation(){
-                var select = document.getElementById("location");
-                var input = document.getElementById("zip");
-                select.onchange = function() {
-                    input.value = select.value;
-                    getImage();
-                }
-            }
-            function getImage(){
-                var img = document.getElementById("location");
-                var imgTag = document.getElementById("imgHere");
-                if (img.value=="83440"){
-                    imgTag.src = "images/offroad.jpg";
-                } else if (img.value=="83401") {
-                    imgTag.src = "images/river.jpg";
-                } else if (img.value=="83221") {
-                    imgTag.src = "images/hike.jpg";
-                }
-            }
-            window.onload = getLocation;
-            </script>
-            <section id="form-msg">
-                <p>This website is very simple:
-                    Fill out the form and go where the ‘wind’ takes you. 
-                    Of course, by “go where the ‘wind’ takes you”, I mean “do what the results of the survey tell you to do”. Easy!
-                    All you need is your age, a location, a time frame, a friend (or an acquaintance at the VERY least), your social security number, your credit card information, your mother’s maiden name, the name of your first pet—
-                    Woah, woah! I’m kidding! Relax!
-                    Your age, a general location, and a time frame will be just fine. The site will ask for a zip code and when you want to do whatever fate has in store for you to do. The age input is to prevent inappropriate activities to appear to those who are ineligible (that’s right, college kids. Leave the kiddy pool for the kiddies!). 
-                    In all seriousness, safety is the priority here. Fun is a close second. Very close.
-                    Once the needed info is provided, viola! The site results provide you with a list of the top ten activities in your area and directions to get to each. They are ranked according to distance, time availability, and popularity (determined by other review providers. Ready, Set, Go! Is not affiliated with those other sites. yuck). If one wishes, one can also filter the results by any of those factors in whatever order is desired.
-                    Sadly, this website is not developed to the point where you can magically make any activity ever thought of just come to existence wherever you are. Activities are potentially limited by location, and as mentioned before, eligibility. We also don’t recommend forcing your good buddy Joe into doing something he has a deadly fear of (chin up, Joe. There are plenty of other cool and fun things to do besides upside-down ice fishing).</p>
             </section>
         </main>
+            <section id="result">
+                <input type="text" name="zip" id="zip">
+                    <img id="imgHere" src="">
+                    <text id="text" src="">
+                <script>
+                function getLocation(){
+                    var select = document.getElementById("location");
+                    var input = document.getElementById("zip");
+                    select.onchange = function() {
+                        input.value = select.value;
+                        getImage();
+                    }
+                }
+                function getImage(){
+                    var img = document.getElementById("location");
+                    var imgTag = document.getElementById("imgHere");
+                    if (img.value=="83440"){
+                        imgTag.src = "images/offroad.jpg";
+        
+                    } else if (img.value=="83401") {
+                        imgTag.src = "images/river.jpg"
+
+                    } else if (img.value=="83221") {
+                        imgTag.src = "images/hike.jpg";
+                    }
+                }
+                window.onload = getLocation;
+                </script>
+            </section>
+            <section id="form-msg">
+                <p>This website is very simple:</p>
+                <p>Fill out the form and go where the ‘wind’ takes you.</p> 
+                <p>Of course, by “go where the ‘wind’ takes you”, I mean “do what the results of the survey tell you to do”. Easy!
+                    All you need is your age, a location, a time frame, a friend (or an acquaintance at the VERY least), your social security number, your credit card information, your mother’s maiden name, the name of your first pet—</p>
+                <p>Woah, woah! I’m kidding! Relax!</p>
+                <p>Your age, a general location, and a time frame will be just fine. The site will ask for a zip code and when you want to do whatever fate has in store for you to do.
+                    The age input is to prevent inappropriate activities to appear to those who are ineligible (that’s right, college kids. Leave the kiddy pool for the kiddies!).</p>
+                <p>In all seriousness, safety is the priority here. Fun is a close second. Very close.</p>
+                <p>Once the needed info is provided, viola! The site results provide you with the top activity in your area.
+                    They are ranked according to distance, time availability, and popularity (determined by other review providers. Ready, Set, Go! Is not affiliated with those other sites. yuck).</p>
+                <p>Sadly, this website is not developed to the point where you can magically make any activity ever thought of just come to existence wherever you are. Activities are potentially limited by location, and as mentioned before, eligibility.
+                    We also don’t recommend forcing your good buddy Joe into doing something he has a deadly fear of (chin up, Joe. There are plenty of other cool and fun things to do besides upside-down ice fishing).</p>
+            </section>
         <footer>
             <h3>Ready, Set, Go! &copy; 2022 - Tyler Eich</h3>
             <h3><a href="site-plan.html">Site Plan</a></h3>

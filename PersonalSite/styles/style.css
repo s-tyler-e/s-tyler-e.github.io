@@ -61,7 +61,7 @@ body {
     top: 40%;
     width: auto;
     padding: 16px;
-    margin-top: 0px;
+    margin-top: -50px;
     color: black;
     font-weight: bold;
     font-size: 20px;
@@ -99,7 +99,7 @@ body {
     width: 20%;
 }
 .demo {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 .active, .demo:hover {
     opacity: 1;
@@ -172,11 +172,32 @@ main section img {
 #form-title{
     grid-column: 5/7;
 }
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
 #age, #where, #when, #find {
-    grid-column: 2/4;
+    grid-column: 4/8;
 }
 #form-msg {
-    grid-column: 6/8;
+    grid-column: 2/10;
+    font-size: .85em;
+    text-align: left;
+}
+#find {
+    grid-column: 4/8;
+    width: 100%;
+}
+#zip {
+    display: none;
+}
+#result {
+    grid-column: 5/8;
+    width: 100%;
+}
+#imgHere {
+    grid-column: 4/8;
+    grid-row: 5/8;
 }
 #compass {
     width: 100%;
