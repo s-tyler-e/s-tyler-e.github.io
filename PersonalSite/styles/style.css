@@ -48,6 +48,7 @@ body {
 }
 .container {
     position: relative;
+    align-items: center; 
 }
 .mySlides {
     display: none;
@@ -63,6 +64,8 @@ body {
     padding: 16px;
     margin-top: -50px;
     color: black;
+    background-color: #6f7364;
+    opacity: .6;
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -129,7 +132,13 @@ body {
     text-align: center;
 }
 main {
-    text-align: center;
+    text-align: left;
+    display: grid;
+    margin: 30px;
+    padding: 10px;
+    background-color: #163c4b;
+    color: #74be25;
+
 }
 main section img {
     box-sizing: border-box;
@@ -159,6 +168,7 @@ main section img {
 .button h1 {
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 .button {
     border: 10px solid black;
@@ -167,6 +177,7 @@ main section img {
 }
 .button:hover {
     opacity: .95;
+    transition: transform .5s;
     transform: scale(1.1);
 }
 #form-title{
@@ -176,17 +187,64 @@ main section img {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
-#age, #where, #when, #find {
-    grid-column: 4/8;
+.choose {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 2px 2px black;
+    color: #be2528
+}
+.when-q {
+    grid-column: 1/4;
+    grid-row: 7/8;
+    padding-bottom: 50px;
+    color: #74be25;
+}
+.age-q{
+    grid-column: 1/4;
+    grid-row: 3/4;
+    margin-top: 30px;
+}
+.where-q {
+    grid-column: 1/4;
+    grid-row: 5/6;
+    margin-top: 30px;
+}
+
+#when {
+    grid-column: 7/9;
+    grid-row: 1/8;
+    margin-top: 30px;
+}
+#age {
+    grid-column: 7/9;
+    grid-row: 3/4;
+    margin: 40px;
+}
+#where {
+    grid-column: 7/9;
+    grid-row: 5/6;
+    margin: 40px;
+}
+
+.button a{
+    color: #25bebb;
+    text-decoration: none;
 }
 #form-msg {
     grid-column: 2/10;
     font-size: .85em;
     text-align: left;
+    font-family: 'Cinzel', serif;
+
 }
 #find {
-    grid-column: 4/8;
+    grid-column: 5/8;
+    grid-row: 7/8;
     width: 100%;
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 2px 2px black;
+    color: #be2528;
+    text-align: center;
 }
 #zip {
     display: none;
@@ -194,6 +252,9 @@ main section img {
 #result {
     grid-column: 5/8;
     width: 100%;
+    align-items: center;
+    justify-items: center;
+    
 }
 #imgHere {
     grid-column: 4/8;

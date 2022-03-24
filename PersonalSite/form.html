@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Cinzel&family=Libre+Baskerville&family=Merriweather:wght@300&family=Permanent+Marker&family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -26,23 +27,23 @@
         <div class="container">
             <div class="mySlides">
                 <div class="numbertext">1/5</div>
-                    <img src="images/beach.jpg" alt="beach" style="width:100%">
+                    <img src="images/beach(1).jpg" alt="beach" style="width:100%">
             </div>
             <div class="mySlides">
                 <div class="numbertext">2/5</div>
-                    <img src="images/hike.jpg" alt="hike" style="width:100%">
+                    <img src="images/hike(1).jpg" alt="hike" style="width:100%">
             </div>
             <div class="mySlides">
                 <div class="numbertext">3/5</div>
-                    <img src="images/offroad.jpg" alt="offroad" style="width:100%">
+                    <img src="images/offroad(1).jpg" alt="offroad" style="width:100%">
             </div>
             <div class="mySlides">
                 <div class="numbertext">4/5</div>
-                    <img src="images/river.jpg" alt="river" style="width:100%">
+                    <img src="images/river(1).jpg" alt="river" style="width:100%">
             </div>
             <div class="mySlides">
                 <div class="numbertext">5/5</div>
-                    <img src="images/slope.jpg" alt="slope" style="width:100%">
+                    <img src="images/slope(1).jpg" alt="slope" style="width:100%">
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -51,29 +52,29 @@
             </div>
             <div class="row">
                 <div class="column">
-                    <img class="demo cursor" src="images/beach.jpg" style="width: 100%" onclick="currentSlide(1)" alt="beach">
+                    <img class="demo cursor" src="images/beach(1).jpg" style="width: 100%" onclick="currentSlide(1)" alt="Go to the Beach!">
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="images/hike.jpg" style="width: 100%" onclick="currentSlide(2)" alt="">
+                    <img class="demo cursor" src="images/hike(1).jpg" style="width: 100%" onclick="currentSlide(2)" alt="Take a Hike!">
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="images/offroad.jpg" style="width: 100%" onclick="currentSlide(3)" alt="">
+                    <img class="demo cursor" src="images/offroad(1).jpg" style="width: 100%" onclick="currentSlide(3)" alt="Go Off-Roading!">
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="images/river.jpg" style="width: 100%" onclick="currentSlide(4)" alt="">
+                    <img class="demo cursor" src="images/river(1).jpg" style="width: 100%" onclick="currentSlide(4)" alt="Make a Splash!">
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="images/slope.jpg" style="width: 100%" onclick="currentSlide(5)" alt="">
+                    <img class="demo cursor" src="images/slope(1).jpg" style="width: 100%" onclick="currentSlide(5)" alt="Hit the Slopes!">
                 </div>
             </div>
         </div>
+    <script>
         let slideIndex = 1;
         showSlides(slideIndex);
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
 
-        // Thumbnail image controls
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
@@ -94,13 +95,14 @@
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
         }
+    </script>
+    <h1 class="choose">Select from the items below:</h1>
         <main class="form-grid">
-            <section id="form-title">
-                <h1>Select from the items below</h1>
-            </section>
-            <section id="when">
+            <section id="when-q">
                 <h2>When's the party!?</h2>
                 <p>Select your Days</p>
+            </section>
+            <section id="when">
                 <div>
                     <input type="checkbox" id="mon" name="mon">
                     <label for="mon">Monday</label>
@@ -126,9 +128,11 @@
                     <label for="sat">Saturday</label>
                 </div>
             </section>
+            <section class="age-q">
+               <h2>How old are you?</h2> 
+            </section>
             <section id="age">
-                <h2>How old are you?</h2>
-                <label for="ages">Select your Age</label>
+                <label for="ages">Select your Age:</label>
                 <select name="ages" id="ages">
                     <option>...</option>
                     <option value="0-11">0-11</option>
@@ -136,9 +140,11 @@
                     <option value="18+">18+</option>
                 </select>
             </section>
+            <section class="where-q">
+                <h2>What is your desired zip code?</h2>
+            </section>
             <section id="where">
-                <h2>What is your current zip code?</h2>
-                <label for="location">Select your Zip Code</label>
+                <label for="location">Select Zip Code</label>
                 <select name="location" id="location">
                     <option>...</option>
                     <option value="83440">83440</option>
@@ -146,14 +152,13 @@
                     <option value="83221">83221</option>
                 </select>
             </section>
+        </main>
             <section id="find">
                 <h1>Ready? Set! GO!</h1>
             </section>
-        </main>
             <section id="result">
                 <input type="text" name="zip" id="zip">
                     <img id="imgHere" src="">
-                    <text id="text" src="">
                 <script>
                 function getLocation(){
                     var select = document.getElementById("location");
