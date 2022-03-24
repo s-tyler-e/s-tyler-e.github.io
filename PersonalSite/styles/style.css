@@ -131,15 +131,6 @@ body {
 #hero-msg h1, #hero-msg h4 {
     text-align: center;
 }
-main {
-    text-align: left;
-    display: grid;
-    margin: 30px;
-    padding: 10px;
-    background-color: #163c4b;
-    color: #74be25;
-
-}
 main section img {
     box-sizing: border-box;
 }
@@ -186,6 +177,12 @@ main section img {
 .form-grid {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    text-align: left;
+    display: grid;
+    margin: 30px;
+    padding: 30px;
+    background-color: #163c4b;
+    color: #74be25;
 }
 .choose {
     text-align: center;
@@ -213,7 +210,7 @@ main section img {
 #when {
     grid-column: 7/9;
     grid-row: 1/8;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 #age {
     grid-column: 7/9;
@@ -232,7 +229,7 @@ main section img {
 }
 #form-msg {
     grid-column: 2/10;
-    font-size: .85em;
+    font-size: .75em;
     text-align: left;
     font-family: 'Cinzel', serif;
 
@@ -263,6 +260,53 @@ main section img {
 #compass {
     width: 100%;
     grid-column: 2/4;
+}
+.faq-title {
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 2px 2px black;
+    color: #be2528;
+    text-align: center;
+    
+}
+.faq-msg h4{
+    grid-column: 2/10;
+    font-size: .75em;
+    text-align: left;
+    font-family: 'Cinzel', serif;
+}
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr 1fr;
+    text-align: left;
+    display: grid;
+    margin: 30px;
+    padding: 10px;
+    background-color: #163c4b;
+    color: #74be25;
+}
+.que1 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+    margin-left: 30px;
+    color: #25bebb;
+    font-size: 1.5em;
+}
+.que2 {
+    grid-column: 1/5;
+    grid-row: 2/3;
+    margin-left: 30px;
+    color: #25bebb;
+    font-size: 1.5em;
+
+}
+.ans1 {
+    grid-column: 6/10;
+    grid-row: 1/2;
+}
+.ans2 {
+    grid-column: 6/10;
+    grid-row: 2/3;
 }
 footer {
     background-color: #6e25be;
